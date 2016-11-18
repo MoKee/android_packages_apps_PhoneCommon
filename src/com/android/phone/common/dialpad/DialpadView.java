@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The Android Open Source Project
+ * Copyright (C) 2014-2016 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +68,7 @@ public class DialpadView extends LinearLayout {
     private final boolean mIsRtl;
 
     private EditText mDigits;
+    private TextView mLocation;
     private ImageButton mDelete;
     private View mOverflowMenuButton;
     private ColorStateList mRippleColor;
@@ -114,6 +116,7 @@ public class DialpadView extends LinearLayout {
     protected void onFinishInflate() {
         setupKeypad();
         mDigits = (EditText) findViewById(R.id.digits);
+        mLocation = (TextView) findViewById(R.id.location);
         mDelete = (ImageButton) findViewById(R.id.deleteButton);
         mOverflowMenuButton = findViewById(R.id.dialpad_overflow);
         mRateContainer = (ViewGroup) findViewById(R.id.rate_container);
@@ -306,6 +309,10 @@ public class DialpadView extends LinearLayout {
 
     public EditText getDigits() {
         return mDigits;
+    }
+
+    public TextView getLocation() {
+        return mLocation;
     }
 
     public ImageButton getDeleteButton() {
