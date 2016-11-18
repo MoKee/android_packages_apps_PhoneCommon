@@ -94,26 +94,51 @@
             android:gravity="center"
             android:visibility="gone" />
 
-        <view class="com.android.phone.common.dialpad.DigitsEditText"
-            xmlns:ex="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/digits"
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
             android:layout_weight="1"
-            android:gravity="center"
-            android:background="@android:color/transparent"
-            android:maxLines="1"
-            android:textSize="@dimen/dialpad_digits_adjustable_text_size"
-            android:freezesText="true"
-            android:focusableInTouchMode="true"
-            android:cursorVisible="false"
-            android:textColor="?attr/dialpad_text_color"
-            android:textCursorDrawable="@null"
-            android:fontFamily="sans-serif"
-            android:textStyle="normal"
-            ex:resizing_text_min_size="@dimen/dialpad_digits_text_min_size" />
+            android:layout_marginLeft="52dp" >
+
+            <TextView
+                xmlns:ex="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:gravity="center"
+                android:background="@android:color/transparent"
+                android:maxLines="1"
+                android:textSize="@dimen/dialpad_location_adjustable_text_size"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                ex:resizing_text_min_size="@dimen/dialpad_location_text_min_size" />
+
+            <view class="com.android.phone.common.dialpad.DigitsEditText"
+                xmlns:ex="http://schemas.android.com/apk/res-autos"
+                android:id="@+id/digits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:gravity="center"
+                android:background="@android:color/transparent"
+                android:maxLines="1"
+                android:textSize="@dimen/dialpad_digits_adjustable_text_size"
+                android:freezesText="true"
+                android:focusableInTouchMode="true"
+                android:cursorVisible="false"
+                android:textColor="?attr/dialpad_text_color"
+                android:textCursorDrawable="@null"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal"
+                ex:resizing_text_min_size="@dimen/dialpad_digits_text_min_size" />
+
+        </RelativeLayout>
 
         <ImageButton
             android:id="@+id/deleteButton"
